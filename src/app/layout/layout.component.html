@@ -1,18 +1,17 @@
 <ng-container>
-  <mat-toolbar class="header">Header</mat-toolbar>
+  <mat-toolbar class="header">
+    <img src="../../favicon.ico" alt="">
+    <span style="margin-left:10px;">ViaAngular</span>
+  </mat-toolbar>
 
   <mat-sidenav-container class="container">
 
     <mat-sidenav #sidenav mode="side" opened class="sidenav" [fixedInViewport]="true" [fixedTopGap]="60"
       [fixedBottomGap]="0">
       <div class="nav">
-        <div class="nav-item"
-          matRipple
-          *ngFor="let item of menuData">
-          <mat-icon class="nav-item-icon">{{item.icon}}</mat-icon>
-          <span class="nav-item-title">{{item.title}}</span>
-          <mat-icon class="collapsed-arrow">keyboard_arrow_right</mat-icon>
-        </div>
+        <ng-container *ngFor="let item of menuData">
+          <app-nav-collapse *ngIf="item.type=='collapse'" [item]="item"></app-nav-collapse>
+        </ng-container>
       </div>
 
     </mat-sidenav>

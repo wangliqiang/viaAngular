@@ -1,0 +1,39 @@
+@mixin icon-size($size) {
+  font-size: $size;
+  height: $size;
+  width: $size;
+  min-width: $size;
+  min-height: $size;
+  line-height: $size; 
+}
+
+.nav-item{
+  display: flex;
+  flex-direction: row;
+  height: 48px;
+  align-items: center;
+  padding: 0 24px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  .nav-item-icon{
+    @include icon-size(16px);
+    color: rgb(93, 93, 93);
+    margin-right: 16px;
+  }
+  .nav-item-title{
+    color: rgb(31, 33, 33);
+    flex: 1;
+    font-size: 15px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    letter-spacing: 1px;
+  }
+  .collapsed-arrow{
+    color: rgb(93, 93, 93);
+    transition: transform .3s ease-in-out, opacity .25s ease-in-out .1s;
+    transform: rotate(0);
+  }
+}
