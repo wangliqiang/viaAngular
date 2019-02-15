@@ -11,6 +11,7 @@ export const navigation: Array<NavigationItem> = [
         id: 'analytics',
         title: '分析页',
         type: 'item',
+        icon: 'palette',
         url: [
         ],
         badge: {
@@ -23,15 +24,14 @@ export const navigation: Array<NavigationItem> = [
   }, {
     id: 'pages',
     title: '页面',
-    i18n: 'Navigation.Pages',
     type: 'collapse',
     icon: 'pages',
     children: [
       {
         id: 'profile',
         title: '个人主页',
-        i18n: 'Navigation.Profile',
         type: 'item',
+        icon: 'extension',
         url: [
         ]
       }

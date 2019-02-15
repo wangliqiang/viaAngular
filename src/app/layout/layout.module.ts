@@ -5,6 +5,7 @@ import { LayoutComponent } from './layout.component';
 
 import { MatSidenavModule, MatToolbarModule, MatButtonModule, MatIconModule, MatRippleModule } from '@angular/material';
 import { NavCollapseComponent } from './nav-collapse/nav-collapse.component';
+import { NavItemComponent } from './nav-item/nav-item.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { NavCollapseComponent } from './nav-collapse/nav-collapse.component';
   ],
   declarations: [
     LayoutComponent,
-    NavCollapseComponent
+    NavCollapseComponent,
+    NavItemComponent
   ],
   exports: [
     LayoutComponent
