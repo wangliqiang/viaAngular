@@ -10,15 +10,25 @@ export const navigation: Array<NavigationItem> = [
       {
         id: 'analytics',
         title: '分析页',
-        type: 'item',
-        icon: 'palette',
+        type: 'collapse',
+        icon: '',
         url: [
         ],
         badge: {
           title: '25',
           bg: '#1189fb',
           fg: '#FFFFFF'
-        }
+        },
+        children: [
+          {
+            id: 'profile',
+            title: '图表',
+            type: 'item',
+            icon: '',
+            url: [
+            ]
+          }
+        ]
       }
     ]
   }, {

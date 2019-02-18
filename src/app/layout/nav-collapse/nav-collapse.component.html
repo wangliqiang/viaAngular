@@ -1,18 +1,20 @@
 <ng-container>
   <ng-container>
-    <div class="nav-item" matRipple>
+    <div class="nav-link" [ngClass]="item.classes" matRipple
+      (click)="toggleCollapse($event)">
       <ng-container *ngTemplateOutlet="itemContent"></ng-container>
     </div>
-    <div class="children">
+    <div class="children"  [@slideInOut]="isCollapsed">
       <ng-container *ngFor="let item of item.children">
         <app-nav-collapse *ngIf="item.type=='collapse'" [item]="item"></app-nav-collapse>
         <app-nav-item *ngIf="item.type=='item'" [item]="item"></app-nav-item>
       </ng-container>
     </div>
   </ng-container>
+
   <ng-template #itemContent>
-    <mat-icon class="nav-item-icon">{{item.icon}}</mat-icon>
-    <span class="nav-item-title">{{item.title}}</span>
+    <mat-icon class="nav-link-icon">{{item.icon}}</mat-icon>
+    <span class="nav-link-title">{{item.title}}</span>
     <mat-icon class="collapsed-arrow">keyboard_arrow_right</mat-icon>
   </ng-template>
 </ng-container>
